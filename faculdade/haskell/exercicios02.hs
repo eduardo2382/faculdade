@@ -25,8 +25,10 @@ verificarSituacao n1 n2 n3
 
 -- 7. Dê definições diferentes para uma função lógica que implemente o "ou exclusivo". O ou exclusivo de dois valores é verdadeiro se e somente se um deles for verdadeiro e outro falso.
 
+{-
 ouExclusivo :: Bool -> Bool -> Bool
 ouExclusivo v1 v2 = if (v1 && v2==False) || (v2 && v1==False) then True else False
+-}
 
 
 
