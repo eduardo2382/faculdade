@@ -49,3 +49,14 @@ bissexto ano =
             if mod ano 4 == 0
                 then True
                 else False
+
+
+-- 7
+saoJoao :: Int -> Int -> Int -> Bool
+saoJoao dia mes ano = 
+    
+    where
+        antesSaoJoao = 
+            if (mes < 6) || ((mes == 6) && (dia < 24))
+                then True
+                else False
