@@ -107,3 +107,12 @@ locadora dias km =
     where
         kmMax = dias*100
         
+
+--9
+corretora :: Bool -> Int -> Bool
+corretora mulher idade =
+    if mulher && idade > 40
+        then
+            True
+        else 
+            False
