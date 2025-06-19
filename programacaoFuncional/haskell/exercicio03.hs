@@ -116,3 +116,12 @@ corretora mulher idade =
             True
         else 
             False
+
+
+--10
+energia :: Float -> Float
+energia kwh 
+    | kwh <= 99  = kwh * 1.35
+    | kwh <= 299 = kwh * 1.55
+    | kwh <= 574 = (kwh * 1.75) + 35 + (0.10 * ((kwh * 1.75) + 35))
+    | otherwise  = (kwh * 2.15) + 35 + (0.10 * ((kwh * 2.75) + 35))
