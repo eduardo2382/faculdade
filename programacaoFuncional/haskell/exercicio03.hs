@@ -52,11 +52,50 @@ bissexto ano =
 
 
 -- 7
-saoJoao :: Int -> Int -> Int -> Bool
-saoJoao dia mes ano = 
-    
+saoJoao :: Int -> Int -> Int -> Int
+saoJoao diaAtual mesAtual anoAtual = 
+    if antesSaoJoao
+        then
+            if mesAtual == 6
+                then 
+                    24 - diaAtual
+                else 
+                    diasMesAtual + diasAteJunho (mesAtual+1) + 24
+        else 
+            if diaAtual == 24
+                then 
+                    0
+                else
+                    diasAteDezembro (mesAtual+1) + diasMesAtual + diasAteJunho (1) + 24
+
     where
         antesSaoJoao = 
-            if (mes < 6) || ((mes == 6) && (dia < 24))
+            if (mesAtual < 6) || ((mesAtual == 6) && (diaAtual < 24))
                 then True
                 else False
+
+        diasDoMes mes = 
+            if mes == 2
+                then 
+                    28 + fromEnum (bissexto anoAtual)
+                else
+                    if mes == 1 || mes == 3 || mes == 5 || mes == 7 || mes == 8 || mes == 10 || mes == 12
+                        then 31
+                        else 30
+
+        diasMesAtual = (diasDoMes mesAtual) - diaAtual
+
+        diasAteJunho mes = 
+            if mes < 6
+                then 
+                    diasDoMes mes + diasAteJunho (mes+1)
+                else 
+                    0
+
+        diasAteDezembro mes = 
+            if mes <= 12
+                then 
+                    diasDoMes mes + diasAteDezembro (mes+1)
+                else 
+                    0
+        
