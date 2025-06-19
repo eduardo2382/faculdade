@@ -94,4 +94,16 @@ saoJoao diaAtual mesAtual anoAtual =
                     diasDoMes mes + diasAteDezembro (mes+1)
                 else 
                     0
+
+
+-- 8
+locadora :: Int -> Int -> Int
+locadora dias km = 
+    if km > kmMax
+        then 
+            ((km-kmMax)*12)+(90*dias)
+        else
+            90*dias
+    where
+        kmMax = dias*100
         
