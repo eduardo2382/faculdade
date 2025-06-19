@@ -125,3 +125,18 @@ energia kwh
     | kwh <= 299 = kwh * 1.55
     | kwh <= 574 = (kwh * 1.75) + 35 + (0.10 * ((kwh * 1.75) + 35))
     | otherwise  = (kwh * 2.15) + 35 + (0.10 * ((kwh * 2.75) + 35))
+
+
+--11
+energiaProgressiva :: Float -> Float
+energiaProgressiva kwh 
+    | kwh <= 99  = tarifaA kwh
+    | kwh <= 299 = tarifaB kwh
+    | kwh <= 574 = tarifaC kwh
+    | otherwise  = tarifaD kwh
+
+    where
+        tarifaA gasto = gasto * 1.35
+        tarifaB gasto = (tarifaA 99) + ((gasto-99) * 1.55)
+        tarifaC gasto = (tarifaA 99) + (tarifaB 299) + ((gasto-299) * 1.75) + 35 + (0.10 * (((gasto-299) * 1.75) + 35))
+        tarifaD gasto = (tarifaA 99) + (tarifaB 299) + (tarifaC 574) + ((gasto-574 * 2.15) + 35 + (0.10 * ((gasto-574 * 2.75) + 35)))
