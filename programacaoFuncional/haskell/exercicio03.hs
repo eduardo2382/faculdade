@@ -62,15 +62,11 @@ saoJoao diaAtual mesAtual anoAtual =
                 else 
                     diasMesAtual + diasAteJunho (mesAtual+1) + 24
         else 
-            if diaAtual == 24
-                then 
-                    0
-                else
-                    diasAteDezembro (mesAtual+1) + diasMesAtual + diasAteJunho (1) + 24
+            diasAteDezembro (mesAtual+1) + diasMesAtual + diasAteJunho (1) + 24
 
     where
         antesSaoJoao = 
-            if (mesAtual < 6) || ((mesAtual == 6) && (diaAtual < 24))
+            if (mesAtual < 6) || ((mesAtual == 6) && (diaAtual <= 24))
                 then True
                 else False
 
