@@ -140,3 +140,17 @@ energiaProgressiva kwh
         tarifaB gasto = (tarifaA 99) + ((gasto-99) * 1.55)
         tarifaC gasto = (tarifaA 99) + (tarifaB 299) + ((gasto-299) * 1.75) + 35 + (0.10 * (((gasto-299) * 1.75) + 35))
         tarifaD gasto = (tarifaA 99) + (tarifaB 299) + (tarifaC 574) + ((gasto-574 * 2.15) + 35 + (0.10 * ((gasto-574 * 2.75) + 35)))
+
+
+--12
+equacao :: Float -> Float -> Float -> String
+equacao a b c 
+    | a == 0     = "Nao e equacao de segundo grau"
+    | delta < 0  = "Nao tem solucao real"
+    | delta == 0 = "A unica solucao real é " ++ show r 
+    | otherwise  = "As solucoes reais sao " ++ show r1 ++ " e " ++ show r2
+    where 
+        delta = (b**2) - 4 * a * c
+        r = (b*(-1)+(delta**(1/2)))/2*a
+        r1 = (b*(-1)+(delta**(1/2)))/2*a
+        r2 = (b*(-1)-(delta**(1/2)))/2*a
