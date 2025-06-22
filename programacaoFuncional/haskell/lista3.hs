@@ -160,4 +160,30 @@ equacao a b c
 
 
 --14
+mercado :: Float -> Int -> Int -> IO ()
+mercado pao leite vinho = 
+    putStrLn(
+        (if pao > 0 then linha "Pao " precoPao else "") ++
+        (if leite > 0 then linha "Leite " precoLeite else "") ++ 
+        (if vinho > 0 then linha "Vinho " precoVinho else "") ++
+        (if descontoPao > 0 then linha "Desconto no Pao " descontoPao else "") ++
+        (if descontoLeite > 0 then linha "Desconto no Leite " descontoLeite else "") ++
+        (if descontoVinho > 0 then linha "Desconto no Vinho " descontoVinho else "") ++
+        linha "Valor total " total
+    )
 
+    where
+        precoPao = pao * 4.5
+        descontoPao = if pao >= 1 then precoPao*0.05 else 0
+
+        precoLeite = fromIntegral(leite) * 5.30
+        descontoLeite = fromIntegral(div leite 3) * 0.53  
+
+        precoVinho = fromIntegral(vinho * 25)
+        descontoVinho = fromIntegral((div vinho 3) * 25)
+
+        total = (precoPao + precoLeite + precoVinho) - (descontoPao + descontoLeite + descontoVinho)
+
+        formatarNum num = fromIntegral(round(num*100)) / 100
+
+        linha nome valor = nome ++ replicate (20 - length nome) '-' ++ " R$ " ++ show(formatarNum valor) ++ "\n"
