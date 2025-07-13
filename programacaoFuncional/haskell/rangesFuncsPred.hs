@@ -30,3 +30,7 @@ enesimoElemento lista pos = head(drop (pos-1) lista)
 --d)
 mediaLista :: [Float] -> Float
 mediaLista lista = (sum lista)/ fromIntegral (length lista)
+
+--e) 
+palindromo :: Int -> Bool
+palindromo num = (show num) == (reverse (show num))
