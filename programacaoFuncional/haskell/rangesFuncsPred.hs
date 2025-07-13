@@ -21,8 +21,12 @@ segundoElemento lista = head (tail lista)
 digitosDecimais :: [Char] -> Int
 digitosDecimais lista 
     | head lista == '.' = length(tail lista)
-    | otherwise         = atePonto (tail lista)
+    | otherwise         = digitosDecimais (tail lista)
 
 --c)
 enesimoElemento :: [Int] -> Int -> Int
 enesimoElemento lista pos = head(drop (pos-1) lista)
+
+--d)
+mediaLista :: [Float] -> Float
+mediaLista lista = (sum lista)/ fromIntegral (length lista)
