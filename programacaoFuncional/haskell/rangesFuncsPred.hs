@@ -18,16 +18,10 @@ segundoElemento :: [Int] -> Int
 segundoElemento lista = head (tail lista)
 
 --b)
-atePonto :: String -> String
-atePonto lista 
-    |head lista == '.' =
-
-digitosDecimais :: Float -> String
-digitosDecimais num = lista
-    where
-        lista = show num
-
-
+digitosDecimais :: [Char] -> Int
+digitosDecimais lista 
+    | head lista == '.' = length(tail lista)
+    | otherwise         = atePonto (tail lista)
 
 --c)
 enesimoElemento :: [Int] -> Int -> Int
