@@ -52,3 +52,7 @@ combinacao :: Int -> Int -> Int
 combinacao n m = div (fatorial n) ((fatorial m) * (fatorial (n-m)))
     where
         fatorial num = product [1..num]
+
+--i)
+pares :: [String] -> [Int] -> [(String, Int)]
+pares strings ints = zip strings ints
