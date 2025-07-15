@@ -14,7 +14,7 @@
 
 --3.
 --a)
-segundoElemento :: [Int] -> Int
+segundoElemento :: [a] -> a
 segundoElemento lista = head (tail lista)
 
 --b)
@@ -24,7 +24,7 @@ digitosDecimais lista
     | otherwise         = digitosDecimais (tail lista)
 
 --c)
-enesimoElemento :: [Int] -> Int -> Int
+enesimoElemento :: [a] -> Int -> a
 enesimoElemento lista pos = head(drop (pos-1) lista)
 
 --d)
@@ -34,3 +34,11 @@ mediaLista lista = (sum lista)/ fromIntegral (length lista)
 --e) 
 palindromo :: Int -> Bool
 palindromo num = (show num) == (reverse (show num))
+
+--f)
+unicoValor :: [Int] -> Bool
+unicoValor [] = False
+unicoValor lista 
+    |(tail lista) == []                = True
+    |head lista == head (tail lista) = unicoValor (tail lista)
+    |otherwise                       = False
