@@ -46,3 +46,9 @@ unicoValor lista
 --g)
 produtoImpares :: Int -> Int
 produtoImpares num = product [1,3..num]
+
+--h)
+combinacao :: Int -> Int -> Int
+combinacao n m = div (fatorial n) ((fatorial m) * (fatorial (n-m)))
+    where
+        fatorial num = product [1..num]
