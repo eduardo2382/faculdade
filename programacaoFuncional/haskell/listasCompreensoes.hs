@@ -5,3 +5,7 @@
 imparTri :: [Int] -> [Int]
 imparTri lista = [x*3 | x <- lista, mod x 2 /= 0]
 
+--3
+quantosPar :: [Int] -> Int
+quantosPar lista = sum [1 | x <- lista, mod x 2 == 0]
+
