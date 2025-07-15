@@ -42,3 +42,7 @@ unicoValor lista
     |(tail lista) == []                = True
     |head lista == head (tail lista) = unicoValor (tail lista)
     |otherwise                       = False
+
+--g)
+produtoImpares :: Int -> Int
+produtoImpares num = product [1,3..num]
