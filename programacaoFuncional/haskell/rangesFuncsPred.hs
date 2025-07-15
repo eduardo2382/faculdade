@@ -56,3 +56,7 @@ combinacao n m = div (fatorial n) ((fatorial m) * (fatorial (n-m)))
 --i)
 pares :: [String] -> [Int] -> [(String, Int)]
 pares strings ints = zip strings ints
+
+--j)
+estadosCaptais :: [(String, String)] -> ([String], [String])
+estadosCaptais lista = unzip lista
