@@ -34,3 +34,8 @@ mmc num1 num2 = minimum [x | x <- multiplos1, y <- multiplos2, x==y]
 --8
 onSeparateLines :: [String] -> String
 onSeparateLines lista = concat [x++"\n" | x <- lista]
+
+--9 
+funcReplicate :: Int -> t -> [t]
+funcReplicate 0 x = []
+funcReplicate n elemento = [elemento | x <- [1..n]]
