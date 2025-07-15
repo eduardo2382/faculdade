@@ -16,3 +16,10 @@ divisores num = [x | x <- [1..num], mod num x == 0]
 --5
 numeroPrimo :: Int -> Bool
 numeroPrimo num = length [x | x <- [1..num], mod num x == 0] == 2
+
+--6
+mdc :: Int -> Int -> Int
+mdc num1 num2 = maximum [d1 | d1 <- divisores1, d2 <- divisores2, d1==d2]
+    where
+        divisores1 = divisores num1
+        divisores2 = divisores num2
