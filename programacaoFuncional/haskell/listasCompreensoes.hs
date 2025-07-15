@@ -39,3 +39,11 @@ onSeparateLines lista = concat [x++"\n" | x <- lista]
 funcReplicate :: Int -> t -> [t]
 funcReplicate 0 x = []
 funcReplicate n elemento = [elemento | x <- [1..n]]
+
+--10
+funcRepeat :: t -> [t]
+funcRepeat elemento = [elemento | x <- [1..]]
+
+--11
+formatar :: String -> Int -> String
+formatar frase n = if length frase < n then [' ' | x <- [1..(n-(length frase))]] ++ frase else frase
