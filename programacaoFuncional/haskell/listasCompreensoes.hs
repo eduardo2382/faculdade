@@ -30,3 +30,7 @@ mmc num1 num2 = minimum [x | x <- multiplos1, y <- multiplos2, x==y]
     where
         multiplos1 = [x*num1 | x <- [1..10]]
         multiplos2 = [x*num2 | x <- [1..10]]
+
+--8
+onSeparateLines :: [String] -> String
+onSeparateLines lista = concat [x++"\n" | x <- lista]
