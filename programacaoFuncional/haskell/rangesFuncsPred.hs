@@ -20,13 +20,13 @@ segundoElemento lista = head (tail lista)
 --b)
 atePonto :: String -> String
 atePonto lista 
-    |head lista == '.' =
+    |head lista == '.' = tail lista
+    |otherwise         = atePonto (tail lista)
 
 digitosDecimais :: Float -> String
 digitosDecimais num = lista
     where
         lista = show num
-
 
 
 --c)
