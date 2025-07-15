@@ -13,3 +13,6 @@ quantosPar lista = sum [1 | x <- lista, mod x 2 == 0]
 divisores :: Int -> [Int]
 divisores num = [x | x <- [1..num], mod num x == 0]
 
+--5
+numeroPrimo :: Int -> Bool
+numeroPrimo num = length [x | x <- [1..num], mod num x == 0] == 2
