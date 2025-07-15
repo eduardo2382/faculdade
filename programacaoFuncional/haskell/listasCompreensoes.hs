@@ -23,3 +23,10 @@ mdc num1 num2 = maximum [d1 | d1 <- divisores1, d2 <- divisores2, d1==d2]
     where
         divisores1 = divisores num1
         divisores2 = divisores num2
+
+--7
+mmc :: Int -> Int -> Int
+mmc num1 num2 = minimum [x | x <- multiplos1, y <- multiplos2, x==y]
+    where
+        multiplos1 = [x*num1 | x <- [1..10]]
+        multiplos2 = [x*num2 | x <- [1..10]]
