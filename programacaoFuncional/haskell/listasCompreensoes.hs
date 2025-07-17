@@ -66,3 +66,7 @@ unicoValor lista = (length [x | x <- lista, x/=(head lista)]) < 1
 --14
 multiplos5 :: [Int] -> Bool
 multiplos5 lista = (length [x | x <- lista, (mod x 5) == 0]) == (length lista)
+
+--15
+elementoImpar :: [Int] -> Bool
+elementoImpar lista = (length [x | x <- lista, (mod x 2) /= 0]) > 0
