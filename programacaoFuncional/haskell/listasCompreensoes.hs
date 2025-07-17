@@ -49,7 +49,6 @@ formatar :: String -> Int -> String
 formatar frase n = if length frase < n then [' ' | x <- [1..(n-(length frase))]] ++ frase else frase
 
 --12
-
 tabuada :: Int -> Int -> IO() 
 tabuada numeros multiplicador = 
     putStrLn(
@@ -58,3 +57,9 @@ tabuada numeros multiplicador =
         )
     where
         linha num resultado = (formatar (show num) 2) ++ (funcReplicate 6 ' ') ++ (formatar (show resultado) 2)
+
+--13
+unicoValor :: [Int] -> Bool
+unicoValor [] = False
+unicoValor lista = (length [x | x <- lista, x/=(head lista)]) < 1
+
