@@ -37,8 +37,8 @@ onSeparateLines lista = concat [x++"\n" | x <- lista]
 
 --9 
 funcReplicate :: Int -> t -> [t]
-funcReplicate 0 x = []
-funcReplicate n elemento = [elemento | x <- [1..n]]
+funcReplicate 0 _ = []
+funcReplicate n elemento = [ elemento | x <- [1..n]]
 
 --10
 funcRepeat :: t -> [t]
@@ -49,9 +49,12 @@ formatar :: String -> Int -> String
 formatar frase n = if length frase < n then [' ' | x <- [1..(n-(length frase))]] ++ frase else frase
 
 --12
+
 tabuada :: Int -> Int -> IO() 
 tabuada numeros multiplicador = 
-    putStrLn(concat [show x ++ " " ++ show (x*5) ++ "\n" | x <-[1..5]])
+    putStrLn(
+        funcReplicate 10 '-' ++ "\n" ++
+        concat [linha x (x*multiplicador) ++ "\n"| x <- [1..numeros]]
+        )
     where
-        linha :: Char -> Char -> String
-        linha num resultado = num ++ (funcReplicate ((length num) + (length resultado) - 10) ' ') ++ resultado
+        linha num resultado = (formatar (show num) 2) ++ (funcReplicate 6 ' ') ++ (formatar (show resultado) 2)
