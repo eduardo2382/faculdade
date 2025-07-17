@@ -77,3 +77,10 @@ funcElem valor lista = (length [x | x <- lista, x==valor]) > 0
 
 --17 e 18: nao entendi muito bem a explicação dos exercicios
 
+--19
+type Nota = Float
+type Aluno = String
+
+--a)
+acimaMedia :: [Nota] -> Int
+acimaMedia notas = length [x | x <- notas, x >= 5]
