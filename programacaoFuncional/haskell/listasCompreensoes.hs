@@ -74,3 +74,6 @@ elementoImpar lista = (length [x | x <- lista, (mod x 2) /= 0]) > 0
 --16
 funcElem :: Int -> [Int] -> Bool
 funcElem valor lista = (length [x | x <- lista, x==valor]) > 0
+
+--17 e 18: nao entendi muito bem a explicação dos exercicios
+
