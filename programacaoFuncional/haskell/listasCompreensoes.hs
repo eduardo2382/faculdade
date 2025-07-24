@@ -84,3 +84,11 @@ type Aluno = String
 --a)
 acimaMedia :: [Nota] -> Int
 acimaMedia notas = length [x | x <- notas, x >= 5]
+
+--b)
+nomeAcimaMedia :: [Nota] -> [Aluno] -> [Aluno]
+nomeAcimaMedia notas nomes = [y | (x, y) <- (zip notas nomes), x>=5]
+
+--c)
+maiorSete :: [Nota] -> [Aluno] -> [(Nota, Aluno)]
+maiorSete notas nomes = [(x, y) | (x, y) <- (zip notas nomes), x>=7]
