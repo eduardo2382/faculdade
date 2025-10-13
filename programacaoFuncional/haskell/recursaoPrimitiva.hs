@@ -27,3 +27,7 @@ serie n = 1/(fatorial n) + serie (n-1)
         fatorial 0 = 1
         fatorial 1 = 1
         fatorial num = num*(fatorial (num-1))
+
+--6
+raizQuadradaInteira :: Int -> Int
+raizQuadradaInteira n = 
