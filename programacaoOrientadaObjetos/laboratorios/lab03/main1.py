@@ -1,4 +1,4 @@
-from atvd1 import Estudante
+from estudante import Estudante
 
 def main():
     aluno1 = Estudante("Eduardo", "0293", 0, "Teste, Bairro Teste, Rua Teste")
@@ -12,6 +12,12 @@ def main():
     aluno2.addCred(48)
 
     print("Creditos do aluno2: " + str(aluno2.creditos))
+
+    aluno3 = Estudante("Joao", "023", 344, "Teste2 ,Bairro Teste2, Rua Teste2, 98")
+
+    aluno3.addCred(-48)
+
+    print(aluno3.creditos)
 
 if __name__=="__main__": 
     main()

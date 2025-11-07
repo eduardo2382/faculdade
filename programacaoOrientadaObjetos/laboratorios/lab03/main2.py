@@ -1,4 +1,4 @@
-from atvd1 import Estudante
+from estudante import Estudante
 
 def main():
     aluno1 = Estudante("Eduardo", "001", 0, "Teste, Bairro Teste, Rua Teste, 98")
