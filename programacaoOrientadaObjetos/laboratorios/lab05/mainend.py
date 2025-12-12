@@ -22,7 +22,7 @@ def main():
     endereco.setCidade("Neopolis")
     endereco.setCodPostal("08734211")
 
-    testeAtributos(endereco)
+    endereco.imprimAtributos()
 
 
 if __name__=="__main__": 

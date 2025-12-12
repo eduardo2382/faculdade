@@ -9,13 +9,20 @@ def main():
         print(obj.getCreditos())
         print(obj.getEndereco())
 
-    testeAtributos(Estudante)
+    testeAtributos(estudante)
 
     print("\n")
 
+    estudante.setNome("Mario")
+    estudante.setMatricula("20250075519")
+    estudante.setCreditos(203)
+    estudante.alteraEndereco(30, 0, "Colombia", "Siqueira Campos", "Maceio", "50097800")
 
+    estudante.imprimAtributos()
 
-    testeAtributos(estudante)
+    estudante.incremento("abc")
+
+    estudante.getEndereco()
 
 
 if __name__=="__main__": 

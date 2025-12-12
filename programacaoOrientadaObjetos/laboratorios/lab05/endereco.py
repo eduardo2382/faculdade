@@ -44,12 +44,12 @@ class Endereco():
         self.__codPostal = newCodPostal
 
     def imprimAtributos(self):
-        print("Numero: " + self.__numero + 
-              "\nComplemento: " + self.__complemento +
+        print("Numero: " + str(self.__numero) + 
+              "\nComplemento: " + str(self.__complemento) +
               "\nNome Rua: " + self.__nomeRua +
               "\nBairro: " + self.__bairro +
-              "\nCidade: " + self.__bairro +
-              "\nCodigo Postal: " + self.__codPostal)
+              "\nCidade: " + self.__cidade +
+              "\nCodigo Postal: " + str(self.__codPostal))
 
     def incremento(self): 
         self.__complemento = self.__complemento + 1
