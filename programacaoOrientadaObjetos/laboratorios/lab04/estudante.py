@@ -1,13 +1,13 @@
 class Estudante():
     def __init__(self, nomeInic, matriculaInic, emailInic):
-        self._nome = nomeInic
+        self.__nome = nomeInic
         self.__matricula = matriculaInic
         self.__email = emailInic
         self.__curso = "Sistemas De Informação"
         self.__creditos = 0
 
     def getNome(self):
-        return self._nome
+        return self.__nome
     
     def getMatricula(self):
         return self.__matricula
